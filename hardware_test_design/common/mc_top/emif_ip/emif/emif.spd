@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_emif_arch_fm_191/sim/emif_altera_emif_arch_fm_191_uenu7qa_top.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_bufs.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_ufis.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_ufi_wrapper.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_udir_se_i.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_udir_se_o.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_udir_df_i.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_udir_df_o.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_udir_cp_i.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_bdir_df.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_bdir_se.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_buf_unused.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_cal_counter.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_pll.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_pll_fast_sim.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_pll_extra_clks.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_oct.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_core_clks_rsts.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_hps_clks_rsts.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_local_reset.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_io_tiles_wrap.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_io_tiles.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_io_lane_remap.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_hmc_avl_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_hmc_sideband_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_hmc_mmr_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_hmc_amm_data_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_phylite_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_hmc_ast_data_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_afi_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_seq_if.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_emif_arch_fm_regs.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/altera_std_synchronizer_nocut.v"
+   type="VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/emif_altera_emif_arch_fm_191_uenu7qa_seq_params_synth.hex"
+   type="HEX"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/emif_altera_emif_arch_fm_191_uenu7qa_seq_params_synth.txt"
+   type="OTHER"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/emif_altera_emif_arch_fm_191_uenu7qa_seq_params_sim.txt"
+   type="OTHER"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/emif_altera_emif_arch_fm_191_uenu7qa_readme.txt"
+   type="OTHER"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_arch_fm_191/sim/emif_altera_emif_arch_fm_191_uenu7qa.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_arch_fm_191" />
+ <file
+   path="altera_emif_fm_261/sim/emif_altera_emif_fm_261_l3i6zza.v"
+   type="VERILOG"
+   library="altera_emif_fm_261"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/emif.v"
+   type="VERILOG"
+   library="emif"
+   hasInlineConfiguration="true" />
+ <topLevel name="emif.emif" />
+ <deviceFamily name="agilex" />
+ <device name="AGIB027R29A1E2VR0" />
+</simPackage>

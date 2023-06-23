@@ -1,0 +1,18 @@
+# system info altecc_dec_latency2 on 2023.06.21.20:56:43
+system_info:
+name,value
+DEVICE,AGIB027R29A1E2VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for altecc_dec_latency2 on 2023.06.21.20:56:43
+files:
+filepath,kind,attributes,module,is_top
+sim/altecc_dec_latency2.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,altecc_dec_latency2,true
+altecc_1910/sim/altecc_dec_latency2_altecc_1910_v36jjva.v,VERILOG,,altecc_dec_latency2_altecc_1910_v36jjva,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+altecc_dec_latency2.altecc_0,altecc_dec_latency2_altecc_1910_v36jjva

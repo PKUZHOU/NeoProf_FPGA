@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="fifo_1911/sim/reqfifo_fifo_1911_nm47wdi.v"
+   type="VERILOG"
+   library="fifo_1911" />
+ <file
+   path="fifo_1911/sim/reqfifo_fifo_1911_nm47wdi.sdc"
+   type="SDC_ENTITY"
+   library="fifo_1911" />
+ <file
+   path="sim/reqfifo.v"
+   type="VERILOG"
+   library="reqfifo"
+   hasInlineConfiguration="true" />
+ <topLevel name="reqfifo.reqfifo" />
+ <deviceFamily name="agilex" />
+ <device name="AGIB027R29A1E2VR0" />
+</simPackage>

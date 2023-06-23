@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_emif_cal_iossm_261/sim/altera_emif_cal_iossm.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/altera_emif_f2c_gearbox.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/emif_cal_two_ch_altera_emif_cal_iossm_261_blvn6sy_code.hex"
+   type="HEX"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/emif_cal_two_ch_altera_emif_cal_iossm_261_blvn6sy_sim_global_param_tbl.hex"
+   type="HEX"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/emif_cal_two_ch_altera_emif_cal_iossm_261_blvn6sy_sim_global_param_tbl.txt"
+   type="OTHER"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/emif_cal_two_ch_altera_emif_cal_iossm_261_blvn6sy_synth_global_param_tbl.hex"
+   type="HEX"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/emif_cal_two_ch_altera_emif_cal_iossm_261_blvn6sy_synth_global_param_tbl.txt"
+   type="OTHER"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/emif_cal_two_ch_altera_emif_cal_iossm_261_blvn6sy_arch.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_iossm_261/sim/emif_cal_two_ch_altera_emif_cal_iossm_261_blvn6sy.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_emif_cal_iossm_261" />
+ <file
+   path="altera_emif_cal_261/sim/emif_cal_two_ch_altera_emif_cal_261_yvjgaei.v"
+   type="VERILOG"
+   library="altera_emif_cal_261"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/emif_cal_two_ch.v"
+   type="VERILOG"
+   library="emif_cal_two_ch"
+   hasInlineConfiguration="true" />
+ <topLevel name="emif_cal_two_ch.emif_cal_two_ch" />
+ <deviceFamily name="agilex" />
+ <device name="AGIB027R29A1E2VR0" />
+</simPackage>

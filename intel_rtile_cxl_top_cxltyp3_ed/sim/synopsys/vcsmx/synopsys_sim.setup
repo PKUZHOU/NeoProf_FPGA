@@ -1,0 +1,34 @@
+
+WORK > DEFAULT
+DEFAULT:                              ./libraries/work/                                
+work:                                 ./libraries/work/                                
+intel_rtile_cxl_ast_100:              ./libraries/intel_rtile_cxl_ast_100/             
+intel_rtile_cxl_top_150:              ./libraries/intel_rtile_cxl_top_150/             
+altera_iopll_1931:                    ./libraries/altera_iopll_1931/                   
+altera_avalon_mm_bridge_2001:         ./libraries/altera_avalon_mm_bridge_2001/        
+st_dc_fifo_1941:                      ./libraries/st_dc_fifo_1941/                     
+mm_ccb_1921:                          ./libraries/mm_ccb_1921/                         
+altera_merlin_master_translator_191:  ./libraries/altera_merlin_master_translator_191/ 
+altera_merlin_slave_translator_191:   ./libraries/altera_merlin_slave_translator_191/  
+altera_merlin_master_agent_191:       ./libraries/altera_merlin_master_agent_191/      
+altera_merlin_slave_agent_191:        ./libraries/altera_merlin_slave_agent_191/       
+altera_avalon_sc_fifo_1931:           ./libraries/altera_avalon_sc_fifo_1931/          
+altera_merlin_router_1921:            ./libraries/altera_merlin_router_1921/           
+altera_merlin_traffic_limiter_191:    ./libraries/altera_merlin_traffic_limiter_191/   
+altera_avalon_st_pipeline_stage_1920: ./libraries/altera_avalon_st_pipeline_stage_1920/
+altera_merlin_burst_adapter_1923:     ./libraries/altera_merlin_burst_adapter_1923/    
+altera_merlin_demultiplexer_1921:     ./libraries/altera_merlin_demultiplexer_1921/    
+altera_merlin_multiplexer_1921:       ./libraries/altera_merlin_multiplexer_1921/      
+altera_merlin_width_adapter_1920:     ./libraries/altera_merlin_width_adapter_1920/    
+altera_mm_interconnect_1920:          ./libraries/altera_mm_interconnect_1920/         
+cxltyp3ddr_avmm_interconnect_100:     ./libraries/cxltyp3ddr_avmm_interconnect_100/    
+intel_rtile_cxl_top_cxltyp3_ed:       ./libraries/intel_rtile_cxl_top_cxltyp3_ed/      
+altera_ver:                           ./libraries/altera_ver/                          
+lpm_ver:                              ./libraries/lpm_ver/                             
+sgate_ver:                            ./libraries/sgate_ver/                           
+altera_mf_ver:                        ./libraries/altera_mf_ver/                       
+altera_lnsim_ver:                     ./libraries/altera_lnsim_ver/                    
+tennm_ver:                            ./libraries/tennm_ver/                           
+tennm_hssi_ver:                       ./libraries/tennm_hssi_ver/                      
+tennm_hssi_f1_ver:                    ./libraries/tennm_hssi_f1_ver/                   
+tennm_hssi_r1_ver:                    ./libraries/tennm_hssi_r1_ver/                   

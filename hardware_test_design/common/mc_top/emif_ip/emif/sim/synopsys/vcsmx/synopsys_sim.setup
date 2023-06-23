@@ -1,0 +1,16 @@
+
+WORK > DEFAULT
+DEFAULT:                 ./libraries/work/                   
+work:                    ./libraries/work/                   
+altera_emif_arch_fm_191: ./libraries/altera_emif_arch_fm_191/
+altera_emif_fm_261:      ./libraries/altera_emif_fm_261/     
+emif:                    ./libraries/emif/                   
+altera_ver:              ./libraries/altera_ver/             
+lpm_ver:                 ./libraries/lpm_ver/                
+sgate_ver:               ./libraries/sgate_ver/              
+altera_mf_ver:           ./libraries/altera_mf_ver/          
+altera_lnsim_ver:        ./libraries/altera_lnsim_ver/       
+tennm_ver:               ./libraries/tennm_ver/              
+tennm_hssi_ver:          ./libraries/tennm_hssi_ver/         
+tennm_hssi_f0_ver:       ./libraries/tennm_hssi_f0_ver/      
+tennm_hssi_r0_ver:       ./libraries/tennm_hssi_r0_ver/      

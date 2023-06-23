@@ -1,0 +1,19 @@
+# system info rspfifo on 2023.06.21.20:57:23
+system_info:
+name,value
+DEVICE,AGIB027R29A1E2VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for rspfifo on 2023.06.21.20:57:23
+files:
+filepath,kind,attributes,module,is_top
+sim/rspfifo.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,rspfifo,true
+fifo_1911/sim/rspfifo_fifo_1911_frih6uy.v,VERILOG,,rspfifo_fifo_1911_frih6uy,false
+fifo_1911/sim/rspfifo_fifo_1911_frih6uy.sdc,SDC_ENTITY,NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION,rspfifo_fifo_1911_frih6uy,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+rspfifo.fifo_0,rspfifo_fifo_1911_frih6uy

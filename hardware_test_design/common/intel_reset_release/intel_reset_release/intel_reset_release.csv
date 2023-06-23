@@ -1,0 +1,18 @@
+# system info intel_reset_release on 2023.06.21.20:56:24
+system_info:
+name,value
+DEVICE,AGIB027R29B1E2VR2
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for intel_reset_release on 2023.06.21.20:56:24
+files:
+filepath,kind,attributes,module,is_top
+sim/intel_reset_release.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,intel_reset_release,true
+altera_s10_user_rst_clkgate_1941/sim/altera_s10_user_rst_clkgate.sv,SYSTEM_VERILOG,,altera_s10_user_rst_clkgate,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+intel_reset_release.s10_user_rst_clkgate_0,altera_s10_user_rst_clkgate

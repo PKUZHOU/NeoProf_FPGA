@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altecc_1910/sim/altecc_enc_latency0_altecc_1910_azqkyey.v"
+   type="VERILOG"
+   library="altecc_1910" />
+ <file
+   path="sim/altecc_enc_latency0.v"
+   type="VERILOG"
+   library="altecc_enc_latency0"
+   hasInlineConfiguration="true" />
+ <topLevel name="altecc_enc_latency0.altecc_enc_latency0" />
+ <deviceFamily name="agilex" />
+ <device name="AGIB027R29A1E2VR0" />
+</simPackage>

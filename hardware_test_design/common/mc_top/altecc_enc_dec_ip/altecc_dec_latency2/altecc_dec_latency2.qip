@@ -1,0 +1,41 @@
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_TOOL_VERSION "22.3"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_TOP_LEVEL_COMPONENT_NAME "altecc"
+set_global_assignment -library "altecc_dec_latency2" -name SOPCINFO_FILE [file join $::quartus(qip_path) "altecc_dec_latency2.sopcinfo"]
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name SLD_INFO "QSYS_NAME altecc_dec_latency2 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "altecc_dec_latency2" -name MISC_FILE [file join $::quartus(qip_path) "altecc_dec_latency2.cmp"]
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_TARGETED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_GENERATED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "altecc_dec_latency2" -name MISC_FILE [file join $::quartus(qip_path) "../altecc_dec_latency2.ip"]
+
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_NAME "YWx0ZWNjX2RlY19sYXRlbmN5Ml9hbHRlY2NfMTkxMF92MzZqanZh"
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_DISPLAY_NAME "QUxURUNDIEludGVsIEZQR0EgSVA="
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_VERSION "MTkuMS4w"
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_DESCRIPTION "VGhlIEFMVEVDQyBtZWdhZnVuY3Rpb24gYWxsb3dzIHlvdSB0byBlbmNvZGluZyBvciBkZWNvZGluZyBpbnB1dCBieSB1c2luZyBIYW1taW5nIENvZGluZyBTY2hlbWU="
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL01pc2NlbGxhbmVvdXM="
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvdWcvdWdfbHBtX2FsdF9tZnVnLnBkZg=="
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL3NhbTEzOTUzMzAyOTgwNTIvc2FtMTM5NTMyOTcxNTkwMg=="
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuYWx0ZXJhLmNvbS9kb2N1bWVudGF0aW9uL2t0dzE1MTc4MjIyODEyMTQuaHRtbA=="
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_COMPONENT_NAME "YWx0ZWNjX2RlY19sYXRlbmN5Mg=="
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "altecc_dec_latency2" -library "altecc_dec_latency2" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "altecc_1910" -name VERILOG_FILE [file join $::quartus(qip_path) "altecc_1910/synth/altecc_dec_latency2_altecc_1910_v36jjva.v"]
+set_global_assignment -library "altecc_dec_latency2" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/altecc_dec_latency2.v"]
+
+
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_TOOL_NAME "altecc"
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_TOOL_VERSION "19.1.0"
+set_global_assignment -entity "altecc_dec_latency2_altecc_1910_v36jjva" -library "altecc_1910" -name IP_TOOL_ENV "QsysPrimePro"
+

@@ -1,0 +1,12 @@
+	component altecc_dec_latency1 is
+		port (
+			data          : in  std_logic_vector(71 downto 0) := (others => 'X'); -- data
+			q             : out std_logic_vector(63 downto 0);                    -- q
+			err_corrected : out std_logic;                                        -- err_corrected
+			err_detected  : out std_logic;                                        -- err_detected
+			err_fatal     : out std_logic;                                        -- err_fatal
+			syn_e         : out std_logic;                                        -- syn_e
+			clock         : in  std_logic                     := 'X'              -- clock
+		);
+	end component altecc_dec_latency1;
+

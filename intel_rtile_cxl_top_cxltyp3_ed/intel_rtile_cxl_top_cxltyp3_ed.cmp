@@ -1,0 +1,274 @@
+	component intel_rtile_cxl_top_cxltyp3_ed is
+		port (
+			refclk4                           : in  std_logic                      := 'X';             -- clk
+			refclk0                           : in  std_logic                      := 'X';             -- clk
+			refclk1                           : in  std_logic                      := 'X';             -- clk
+			resetn                            : in  std_logic                      := 'X';             -- reset_n
+			nInit_done                        : in  std_logic                      := 'X';             -- ninit_done
+			sip_warm_rstn_o                   : out std_logic;                                         -- reset_n
+			spi_MISO                          : in  std_logic                      := 'X';             -- MISO
+			spi_MOSI                          : out std_logic;                                         -- MOSI
+			spi_SCLK                          : out std_logic;                                         -- SCLK
+			spi_SS_n                          : out std_logic;                                         -- SS_n
+			cxl_rx_n                          : in  std_logic_vector(15 downto 0)  := (others => 'X'); -- rx_n
+			cxl_rx_p                          : in  std_logic_vector(15 downto 0)  := (others => 'X'); -- rx_p
+			cxl_tx_n                          : out std_logic_vector(15 downto 0);                     -- tx_n
+			cxl_tx_p                          : out std_logic_vector(15 downto 0);                     -- tx_p
+			hdm_size_256mb                    : in  std_logic_vector(35 downto 0)  := (others => 'X'); -- hdm_size
+			mc2ip_memsize                     : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- mem_size
+			ip2hdm_clk                        : out std_logic;                                         -- clk
+			ip2hdm_reset_n                    : out std_logic;                                         -- reset
+			mc2ip_0_sr_status                 : in  std_logic_vector(4 downto 0)   := (others => 'X'); -- sr_status
+			mc2ip_0_rspfifo_full              : in  std_logic                      := 'X';             -- rspfifo_full
+			mc2ip_0_rspfifo_empty             : in  std_logic                      := 'X';             -- rspfifo_empty
+			mc2ip_0_rspfifo_fill_level        : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- rspfifo_fill_level
+			mc2ip_0_reqfifo_full              : in  std_logic                      := 'X';             -- reqfifo_full
+			mc2ip_0_reqfifo_empty             : in  std_logic                      := 'X';             -- reqfifo_empty
+			mc2ip_0_reqfifo_fill_level        : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- reqfifo_fill_level
+			hdm2ip_avmm0_ready                : in  std_logic                      := 'X';             -- ready
+			hdm2ip_avmm0_cxlmem_ready         : in  std_logic                      := 'X';             -- cxlmem_ready
+			hdm2ip_avmm0_readdata             : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			hdm2ip_avmm0_rsp_mdata            : in  std_logic_vector(13 downto 0)  := (others => 'X'); -- rsp_mdata
+			hdm2ip_avmm0_read_poison          : in  std_logic                      := 'X';             -- read_poison
+			hdm2ip_avmm0_readdatavalid        : in  std_logic                      := 'X';             -- readdatavalid
+			hdm2ip_avmm0_ecc_err_corrected    : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_corrected
+			hdm2ip_avmm0_ecc_err_detected     : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_detected
+			hdm2ip_avmm0_ecc_err_fatal        : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_fatal
+			hdm2ip_avmm0_ecc_err_syn_e        : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_syn_e
+			hdm2ip_avmm0_ecc_err_valid        : in  std_logic                      := 'X';             -- ecc_err_valid
+			ip2hdm_avmm0_read                 : out std_logic;                                         -- read
+			ip2hdm_avmm0_write                : out std_logic;                                         -- write
+			ip2hdm_avmm0_write_poison         : out std_logic;                                         -- write_poison
+			ip2hdm_avmm0_write_ras_sbe        : out std_logic;                                         -- write_ras_sbe
+			ip2hdm_avmm0_write_ras_dbe        : out std_logic;                                         -- write_ras_dbe
+			ip2hdm_avmm0_writedata            : out std_logic_vector(511 downto 0);                    -- writedata
+			ip2hdm_avmm0_byteenable           : out std_logic_vector(63 downto 0);                     -- byteenable
+			ip2hdm_avmm0_address              : out std_logic_vector(45 downto 0);                     -- address
+			ip2hdm_avmm0_req_mdata            : out std_logic_vector(13 downto 0);                     -- req_mdata
+			mc2ip_1_sr_status                 : in  std_logic_vector(4 downto 0)   := (others => 'X'); -- sr_status
+			mc2ip_1_rspfifo_full              : in  std_logic                      := 'X';             -- rspfifo_full
+			mc2ip_1_rspfifo_empty             : in  std_logic                      := 'X';             -- rspfifo_empty
+			mc2ip_1_rspfifo_fill_level        : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- rspfifo_fill_level
+			mc2ip_1_reqfifo_full              : in  std_logic                      := 'X';             -- reqfifo_full
+			mc2ip_1_reqfifo_empty             : in  std_logic                      := 'X';             -- reqfifo_empty
+			mc2ip_1_reqfifo_fill_level        : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- reqfifo_fill_level
+			hdm2ip_avmm1_ready                : in  std_logic                      := 'X';             -- ready
+			hdm2ip_avmm1_cxlmem_ready         : in  std_logic                      := 'X';             -- cxlmem_ready
+			hdm2ip_avmm1_readdata             : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			hdm2ip_avmm1_rsp_mdata            : in  std_logic_vector(13 downto 0)  := (others => 'X'); -- rsp_mdata
+			hdm2ip_avmm1_read_poison          : in  std_logic                      := 'X';             -- read_poison
+			hdm2ip_avmm1_readdatavalid        : in  std_logic                      := 'X';             -- readdatavalid
+			hdm2ip_avmm1_ecc_err_corrected    : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_corrected
+			hdm2ip_avmm1_ecc_err_detected     : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_detected
+			hdm2ip_avmm1_ecc_err_fatal        : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_fatal
+			hdm2ip_avmm1_ecc_err_syn_e        : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- ecc_err_syn_e
+			hdm2ip_avmm1_ecc_err_valid        : in  std_logic                      := 'X';             -- ecc_err_valid
+			ip2hdm_avmm1_read                 : out std_logic;                                         -- read
+			ip2hdm_avmm1_write                : out std_logic;                                         -- write
+			ip2hdm_avmm1_write_poison         : out std_logic;                                         -- write_poison
+			ip2hdm_avmm1_write_ras_sbe        : out std_logic;                                         -- write_ras_sbe
+			ip2hdm_avmm1_write_ras_dbe        : out std_logic;                                         -- write_ras_dbe
+			ip2hdm_avmm1_writedata            : out std_logic_vector(511 downto 0);                    -- writedata
+			ip2hdm_avmm1_byteenable           : out std_logic_vector(63 downto 0);                     -- byteenable
+			ip2hdm_avmm1_address              : out std_logic_vector(45 downto 0);                     -- address
+			ip2hdm_avmm1_req_mdata            : out std_logic_vector(13 downto 0);                     -- req_mdata
+			ip2csr_avmm_clk                   : out std_logic;                                         -- clock
+			ip2csr_avmm_rstn                  : out std_logic;                                         -- reset_n
+			csr2ip_avmm_waitrequest           : in  std_logic                      := 'X';             -- waitrequest
+			csr2ip_avmm_readdata              : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- readdata
+			csr2ip_avmm_readdatavalid         : in  std_logic                      := 'X';             -- readdatavalid
+			ip2csr_avmm_writedata             : out std_logic_vector(31 downto 0);                     -- writedata
+			ip2csr_avmm_address               : out std_logic_vector(21 downto 0);                     -- address
+			ip2csr_avmm_write                 : out std_logic;                                         -- write
+			ip2csr_avmm_read                  : out std_logic;                                         -- read
+			ip2csr_avmm_byteenable            : out std_logic_vector(3 downto 0);                      -- byteenable
+			ip2uio_tx_ready                   : out std_logic;                                         -- ready
+			uio2ip_tx_st0_dvalid              : in  std_logic                      := 'X';             -- dvalid
+			uio2ip_tx_st0_sop                 : in  std_logic                      := 'X';             -- sop
+			uio2ip_tx_st0_eop                 : in  std_logic                      := 'X';             -- eop
+			uio2ip_tx_st0_passthrough         : in  std_logic                      := 'X';             -- passthrough
+			uio2ip_tx_st0_data                : in  std_logic_vector(255 downto 0) := (others => 'X'); -- data
+			uio2ip_tx_st0_data_parity         : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- data_parity
+			uio2ip_tx_st0_hdr                 : in  std_logic_vector(127 downto 0) := (others => 'X'); -- hdr
+			uio2ip_tx_st0_hdr_parity          : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- hdr_parity
+			uio2ip_tx_st0_hvalid              : in  std_logic                      := 'X';             -- hvalid
+			uio2ip_tx_st0_prefix              : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- prefix
+			uio2ip_tx_st0_prefix_parity       : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- prefix_parity
+			uio2ip_tx_st0_RSSAI_prefix        : in  std_logic_vector(11 downto 0)  := (others => 'X'); -- RSSAI_prefix
+			uio2ip_tx_st0_RSSAI_prefix_parity : in  std_logic                      := 'X';             -- RSSAI_prefix_parity
+			uio2ip_tx_st0_pvalid              : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- pvalid
+			uio2ip_tx_st0_vfactive            : in  std_logic                      := 'X';             -- vfactive
+			uio2ip_tx_st0_vfnum               : in  std_logic_vector(10 downto 0)  := (others => 'X'); -- vfnum
+			uio2ip_tx_st0_pfnum               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- pfnum
+			uio2ip_tx_st0_chnum               : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- chnum
+			uio2ip_tx_st0_empty               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- empty
+			uio2ip_tx_st0_misc_parity         : in  std_logic                      := 'X';             -- misc_parity
+			uio2ip_tx_st1_dvalid              : in  std_logic                      := 'X';             -- dvalid
+			uio2ip_tx_st1_sop                 : in  std_logic                      := 'X';             -- sop
+			uio2ip_tx_st1_eop                 : in  std_logic                      := 'X';             -- eop
+			uio2ip_tx_st1_passthrough         : in  std_logic                      := 'X';             -- passthrough
+			uio2ip_tx_st1_data                : in  std_logic_vector(255 downto 0) := (others => 'X'); -- data
+			uio2ip_tx_st1_data_parity         : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- data_parity
+			uio2ip_tx_st1_hdr                 : in  std_logic_vector(127 downto 0) := (others => 'X'); -- hdr
+			uio2ip_tx_st1_hdr_parity          : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- hdr_parity
+			uio2ip_tx_st1_hvalid              : in  std_logic                      := 'X';             -- hvalid
+			uio2ip_tx_st1_prefix              : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- prefix
+			uio2ip_tx_st1_prefix_parity       : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- prefix_parity
+			uio2ip_tx_st1_RSSAI_prefix        : in  std_logic_vector(11 downto 0)  := (others => 'X'); -- RSSAI_prefix
+			uio2ip_tx_st1_RSSAI_prefix_parity : in  std_logic                      := 'X';             -- RSSAI_prefix_parity
+			uio2ip_tx_st1_pvalid              : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- pvalid
+			uio2ip_tx_st1_vfactive            : in  std_logic                      := 'X';             -- vfactive
+			uio2ip_tx_st1_vfnum               : in  std_logic_vector(10 downto 0)  := (others => 'X'); -- vfnum
+			uio2ip_tx_st1_pfnum               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- pfnum
+			uio2ip_tx_st1_chnum               : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- chnum
+			uio2ip_tx_st1_empty               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- empty
+			uio2ip_tx_st1_misc_parity         : in  std_logic                      := 'X';             -- misc_parity
+			uio2ip_tx_st2_dvalid              : in  std_logic                      := 'X';             -- dvalid
+			uio2ip_tx_st2_sop                 : in  std_logic                      := 'X';             -- sop
+			uio2ip_tx_st2_eop                 : in  std_logic                      := 'X';             -- eop
+			uio2ip_tx_st2_passthrough         : in  std_logic                      := 'X';             -- passthrough
+			uio2ip_tx_st2_data                : in  std_logic_vector(255 downto 0) := (others => 'X'); -- data
+			uio2ip_tx_st2_data_parity         : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- data_parity
+			uio2ip_tx_st2_hdr                 : in  std_logic_vector(127 downto 0) := (others => 'X'); -- hdr
+			uio2ip_tx_st2_hdr_parity          : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- hdr_parity
+			uio2ip_tx_st2_hvalid              : in  std_logic                      := 'X';             -- hvalid
+			uio2ip_tx_st2_prefix              : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- prefix
+			uio2ip_tx_st2_prefix_parity       : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- prefix_parity
+			uio2ip_tx_st2_RSSAI_prefix        : in  std_logic_vector(11 downto 0)  := (others => 'X'); -- RSSAI_prefix
+			uio2ip_tx_st2_RSSAI_prefix_parity : in  std_logic                      := 'X';             -- RSSAI_prefix_parity
+			uio2ip_tx_st2_pvalid              : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- pvalid
+			uio2ip_tx_st2_vfactive            : in  std_logic                      := 'X';             -- vfactive
+			uio2ip_tx_st2_vfnum               : in  std_logic_vector(10 downto 0)  := (others => 'X'); -- vfnum
+			uio2ip_tx_st2_pfnum               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- pfnum
+			uio2ip_tx_st2_chnum               : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- chnum
+			uio2ip_tx_st2_empty               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- empty
+			uio2ip_tx_st2_misc_parity         : in  std_logic                      := 'X';             -- misc_parity
+			uio2ip_tx_st3_dvalid              : in  std_logic                      := 'X';             -- dvalid
+			uio2ip_tx_st3_sop                 : in  std_logic                      := 'X';             -- sop
+			uio2ip_tx_st3_eop                 : in  std_logic                      := 'X';             -- eop
+			uio2ip_tx_st3_passthrough         : in  std_logic                      := 'X';             -- passthrough
+			uio2ip_tx_st3_data                : in  std_logic_vector(255 downto 0) := (others => 'X'); -- data
+			uio2ip_tx_st3_data_parity         : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- data_parity
+			uio2ip_tx_st3_hdr                 : in  std_logic_vector(127 downto 0) := (others => 'X'); -- hdr
+			uio2ip_tx_st3_hdr_parity          : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- hdr_parity
+			uio2ip_tx_st3_hvalid              : in  std_logic                      := 'X';             -- hvalid
+			uio2ip_tx_st3_prefix              : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- prefix
+			uio2ip_tx_st3_prefix_parity       : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- prefix_parity
+			uio2ip_tx_st3_RSSAI_prefix        : in  std_logic_vector(11 downto 0)  := (others => 'X'); -- RSSAI_prefix
+			uio2ip_tx_st3_RSSAI_prefix_parity : in  std_logic                      := 'X';             -- RSSAI_prefix_parity
+			uio2ip_tx_st3_pvalid              : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- pvalid
+			uio2ip_tx_st3_vfactive            : in  std_logic                      := 'X';             -- vfactive
+			uio2ip_tx_st3_vfnum               : in  std_logic_vector(10 downto 0)  := (others => 'X'); -- vfnum
+			uio2ip_tx_st3_pfnum               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- pfnum
+			uio2ip_tx_st3_chnum               : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- chnum
+			uio2ip_tx_st3_empty               : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- empty
+			uio2ip_tx_st3_misc_parity         : in  std_logic                      := 'X';             -- misc_parity
+			ip2uio_tx_st_Hcrdt_update         : out std_logic_vector(2 downto 0);                      -- Hcrdt_update
+			ip2uio_tx_st_Hcrdt_ch             : out std_logic_vector(0 downto 0);                      -- Hcrdt_ch
+			ip2uio_tx_st_Hcrdt_update_cnt     : out std_logic_vector(5 downto 0);                      -- Hcrdt_update_cnt
+			ip2uio_tx_st_Hcrdt_init           : out std_logic_vector(2 downto 0);                      -- Hcrdt_init
+			uio2ip_tx_st_Hcrdt_init_ack       : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- Hcrdt_init_ack
+			ip2uio_tx_st_Dcrdt_update         : out std_logic_vector(2 downto 0);                      -- Dcrdt_update
+			ip2uio_tx_st_Dcrdt_ch             : out std_logic_vector(0 downto 0);                      -- Dcrdt_ch
+			ip2uio_tx_st_Dcrdt_update_cnt     : out std_logic_vector(11 downto 0);                     -- Dcrdt_update_cnt
+			ip2uio_tx_st_Dcrdt_init           : out std_logic_vector(2 downto 0);                      -- Dcrdt_init
+			uio2ip_tx_st_Dcrdt_init_ack       : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- Dcrdt_init_ack
+			ip2uio_rx_st0_dvalid              : out std_logic;                                         -- dvalid
+			ip2uio_rx_st0_sop                 : out std_logic;                                         -- sop
+			ip2uio_rx_st0_eop                 : out std_logic;                                         -- eop
+			ip2uio_rx_st0_passthrough         : out std_logic;                                         -- passthrough
+			ip2uio_rx_st0_data                : out std_logic_vector(255 downto 0);                    -- data
+			ip2uio_rx_st0_data_parity         : out std_logic_vector(7 downto 0);                      -- data_parity
+			ip2uio_rx_st0_hdr                 : out std_logic_vector(127 downto 0);                    -- hdr
+			ip2uio_rx_st0_hdr_parity          : out std_logic_vector(3 downto 0);                      -- hdr_parity
+			ip2uio_rx_st0_hvalid              : out std_logic;                                         -- hvalid
+			ip2uio_rx_st0_prefix              : out std_logic_vector(31 downto 0);                     -- prefix
+			ip2uio_rx_st0_prefix_parity       : out std_logic_vector(0 downto 0);                      -- prefix_parity
+			ip2uio_rx_st0_RSSAI_prefix        : out std_logic_vector(11 downto 0);                     -- RSSAI_prefix
+			ip2uio_rx_st0_RSSAI_prefix_parity : out std_logic;                                         -- RSSAI_prefix_parity
+			ip2uio_rx_st0_pvalid              : out std_logic_vector(1 downto 0);                      -- pvalid
+			ip2uio_rx_st0_bar                 : out std_logic_vector(2 downto 0);                      -- bar
+			ip2uio_rx_st0_vfactive            : out std_logic;                                         -- vfactive
+			ip2uio_rx_st0_vfnum               : out std_logic_vector(10 downto 0);                     -- vfnum
+			ip2uio_rx_st0_pfnum               : out std_logic_vector(2 downto 0);                      -- pfnum
+			ip2uio_rx_st0_chnum               : out std_logic_vector(0 downto 0);                      -- chnum
+			ip2uio_rx_st0_misc_parity         : out std_logic;                                         -- misc_parity
+			ip2uio_rx_st0_empty               : out std_logic_vector(2 downto 0);                      -- empty
+			ip2uio_rx_st1_dvalid              : out std_logic;                                         -- dvalid
+			ip2uio_rx_st1_sop                 : out std_logic;                                         -- sop
+			ip2uio_rx_st1_eop                 : out std_logic;                                         -- eop
+			ip2uio_rx_st1_passthrough         : out std_logic;                                         -- passthrough
+			ip2uio_rx_st1_data                : out std_logic_vector(255 downto 0);                    -- data
+			ip2uio_rx_st1_data_parity         : out std_logic_vector(7 downto 0);                      -- data_parity
+			ip2uio_rx_st1_hdr                 : out std_logic_vector(127 downto 0);                    -- hdr
+			ip2uio_rx_st1_hdr_parity          : out std_logic_vector(3 downto 0);                      -- hdr_parity
+			ip2uio_rx_st1_hvalid              : out std_logic;                                         -- hvalid
+			ip2uio_rx_st1_prefix              : out std_logic_vector(31 downto 0);                     -- prefix
+			ip2uio_rx_st1_prefix_parity       : out std_logic_vector(0 downto 0);                      -- prefix_parity
+			ip2uio_rx_st1_RSSAI_prefix        : out std_logic_vector(11 downto 0);                     -- RSSAI_prefix
+			ip2uio_rx_st1_RSSAI_prefix_parity : out std_logic;                                         -- RSSAI_prefix_parity
+			ip2uio_rx_st1_pvalid              : out std_logic_vector(1 downto 0);                      -- pvalid
+			ip2uio_rx_st1_bar                 : out std_logic_vector(2 downto 0);                      -- bar
+			ip2uio_rx_st1_vfactive            : out std_logic;                                         -- vfactive
+			ip2uio_rx_st1_vfnum               : out std_logic_vector(10 downto 0);                     -- vfnum
+			ip2uio_rx_st1_pfnum               : out std_logic_vector(2 downto 0);                      -- pfnum
+			ip2uio_rx_st1_chnum               : out std_logic_vector(0 downto 0);                      -- chnum
+			ip2uio_rx_st1_misc_parity         : out std_logic;                                         -- misc_parity
+			ip2uio_rx_st1_empty               : out std_logic_vector(2 downto 0);                      -- empty
+			ip2uio_rx_st2_dvalid              : out std_logic;                                         -- dvalid
+			ip2uio_rx_st2_sop                 : out std_logic;                                         -- sop
+			ip2uio_rx_st2_eop                 : out std_logic;                                         -- eop
+			ip2uio_rx_st2_passthrough         : out std_logic;                                         -- passthrough
+			ip2uio_rx_st2_data                : out std_logic_vector(255 downto 0);                    -- data
+			ip2uio_rx_st2_data_parity         : out std_logic_vector(7 downto 0);                      -- data_parity
+			ip2uio_rx_st2_hdr                 : out std_logic_vector(127 downto 0);                    -- hdr
+			ip2uio_rx_st2_hdr_parity          : out std_logic_vector(3 downto 0);                      -- hdr_parity
+			ip2uio_rx_st2_hvalid              : out std_logic;                                         -- hvalid
+			ip2uio_rx_st2_prefix              : out std_logic_vector(31 downto 0);                     -- prefix
+			ip2uio_rx_st2_prefix_parity       : out std_logic_vector(0 downto 0);                      -- prefix_parity
+			ip2uio_rx_st2_RSSAI_prefix        : out std_logic_vector(11 downto 0);                     -- RSSAI_prefix
+			ip2uio_rx_st2_RSSAI_prefix_parity : out std_logic;                                         -- RSSAI_prefix_parity
+			ip2uio_rx_st2_pvalid              : out std_logic_vector(1 downto 0);                      -- pvalid
+			ip2uio_rx_st2_bar                 : out std_logic_vector(2 downto 0);                      -- bar
+			ip2uio_rx_st2_vfactive            : out std_logic;                                         -- vfactive
+			ip2uio_rx_st2_vfnum               : out std_logic_vector(10 downto 0);                     -- vfnum
+			ip2uio_rx_st2_pfnum               : out std_logic_vector(2 downto 0);                      -- pfnum
+			ip2uio_rx_st2_chnum               : out std_logic_vector(0 downto 0);                      -- chnum
+			ip2uio_rx_st2_misc_parity         : out std_logic;                                         -- misc_parity
+			ip2uio_rx_st2_empty               : out std_logic_vector(2 downto 0);                      -- empty
+			ip2uio_rx_st3_dvalid              : out std_logic;                                         -- dvalid
+			ip2uio_rx_st3_sop                 : out std_logic;                                         -- sop
+			ip2uio_rx_st3_eop                 : out std_logic;                                         -- eop
+			ip2uio_rx_st3_passthrough         : out std_logic;                                         -- passthrough
+			ip2uio_rx_st3_data                : out std_logic_vector(255 downto 0);                    -- data
+			ip2uio_rx_st3_data_parity         : out std_logic_vector(7 downto 0);                      -- data_parity
+			ip2uio_rx_st3_hdr                 : out std_logic_vector(127 downto 0);                    -- hdr
+			ip2uio_rx_st3_hdr_parity          : out std_logic_vector(3 downto 0);                      -- hdr_parity
+			ip2uio_rx_st3_hvalid              : out std_logic;                                         -- hvalid
+			ip2uio_rx_st3_prefix              : out std_logic_vector(31 downto 0);                     -- prefix
+			ip2uio_rx_st3_prefix_parity       : out std_logic_vector(0 downto 0);                      -- prefix_parity
+			ip2uio_rx_st3_RSSAI_prefix        : out std_logic_vector(11 downto 0);                     -- RSSAI_prefix
+			ip2uio_rx_st3_RSSAI_prefix_parity : out std_logic;                                         -- RSSAI_prefix_parity
+			ip2uio_rx_st3_pvalid              : out std_logic_vector(1 downto 0);                      -- pvalid
+			ip2uio_rx_st3_bar                 : out std_logic_vector(2 downto 0);                      -- bar
+			ip2uio_rx_st3_vfactive            : out std_logic;                                         -- vfactive
+			ip2uio_rx_st3_vfnum               : out std_logic_vector(10 downto 0);                     -- vfnum
+			ip2uio_rx_st3_pfnum               : out std_logic_vector(2 downto 0);                      -- pfnum
+			ip2uio_rx_st3_chnum               : out std_logic_vector(0 downto 0);                      -- chnum
+			ip2uio_rx_st3_misc_parity         : out std_logic;                                         -- misc_parity
+			ip2uio_rx_st3_empty               : out std_logic_vector(2 downto 0);                      -- empty
+			uio2ip_rx_st_Hcrdt_update         : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- Hcrdt_update
+			uio2ip_rx_st_Hcrdt_ch             : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- Hcrdt_ch
+			uio2ip_rx_st_Hcrdt_update_cnt     : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- Hcrdt_update_cnt
+			uio2ip_rx_st_Hcrdt_init           : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- Hcrdt_init
+			ip2uio_rx_st_Hcrdt_init_ack       : out std_logic_vector(2 downto 0);                      -- Hcrdt_init_ack
+			uio2ip_rx_st_Dcrdt_update         : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- Dcrdt_update
+			uio2ip_rx_st_Dcrdt_ch             : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- Dcrdt_ch
+			uio2ip_rx_st_Dcrdt_update_cnt     : in  std_logic_vector(11 downto 0)  := (others => 'X'); -- Dcrdt_update_cnt
+			uio2ip_rx_st_Dcrdt_init           : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- Dcrdt_init
+			ip2uio_rx_st_Dcrdt_init_ack       : out std_logic_vector(2 downto 0);                      -- Dcrdt_init_ack
+			ip2uio_bus_number                 : out std_logic_vector(7 downto 0);                      -- usr_bus_number
+			ip2uio_device_number              : out std_logic_vector(4 downto 0)                       -- usr_device_number
+		);
+	end component intel_rtile_cxl_top_cxltyp3_ed;
+

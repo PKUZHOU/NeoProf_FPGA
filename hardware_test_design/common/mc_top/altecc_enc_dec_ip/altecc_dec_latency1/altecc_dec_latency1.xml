@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.06.21.20:56:38"
+ outputDirectory="/tmp/alt9529_8442435674046616027.dir/0001_intel_rtile_cxl_top_0_gen/hardware_test_design/common/altecc_dec_latency1/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGIB027R29A1E2VR0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="data" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="data" direction="input" role="data" width="72" />
+  </interface>
+  <interface name="q" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="q" direction="output" role="q" width="64" />
+  </interface>
+  <interface name="err_corrected" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port
+       name="err_corrected"
+       direction="output"
+       role="err_corrected"
+       width="1" />
+  </interface>
+  <interface name="err_detected" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="err_detected" direction="output" role="err_detected" width="1" />
+  </interface>
+  <interface name="err_fatal" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="err_fatal" direction="output" role="err_fatal" width="1" />
+  </interface>
+  <interface name="syn_e" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="syn_e" direction="output" role="syn_e" width="1" />
+  </interface>
+  <interface name="clock" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="clock" direction="input" role="clock" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="altecc_dec_latency1" version="1.0" name="altecc_dec_latency1">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGIB027R29A1E2VR0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/tmp/alt9529_8442435674046616027.dir/0001_intel_rtile_cxl_top_0_gen/hardware_test_design/common/altecc_dec_latency1/synth/altecc_dec_latency1.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/tmp/alt9529_8442435674046616027.dir/0001_intel_rtile_cxl_top_0_gen/hardware_test_design/common/altecc_dec_latency1/synth/altecc_dec_latency1.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/tmp/alt9529_8442435674046616027.dir/0001_intel_rtile_cxl_top_0_gen/hardware_test_design/common/altecc_dec_latency1.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/data/intelFPGA_pro/22.3/ip/altera/megafunctions/altecc/altecc_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="altecc_dec_latency1">"Generating: altecc_dec_latency1"</message>
+   <message level="Info" culprit="altecc_dec_latency1">"Generating: altecc_dec_latency1_altecc_1910_lizxuqi"</message>
+   <message level="Info" culprit="altecc_0">Generating top-level entity altecc_dec_latency1_altecc_1910_lizxuqi.</message>
+   <message level="Info" culprit="altecc_0">command = exec /data/intelFPGA_pro/22.3/quartus/linux64/clearbox ALTECC_DECODER -f /tmp/alt9529_3003518403815586777.dir/0003_altecc_0_gen/parameter_list CBX_FILE=\"altecc_dec_latency1_altecc_1910_lizxuqi.v\" CBX_OUTPUT_DIRECTORY=\"/tmp/alt9529_3003518403815586777.dir/0003_altecc_0_gen\"</message>
+   <message level="Info" culprit="altecc_0">error = Output file name /tmp/alt9529_3003518403815586777.dir/0003_altecc_0_gen/altecc_dec_latency1_altecc_1910_lizxuqi.v</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altecc"
+   version="19.1.0"
+   name="altecc_dec_latency1_altecc_1910_lizxuqi">
+  <parameter name="WIDTH_DATAWORD" value="64" />
+  <parameter name="LPM_PIPELINE" value="1" />
+  <parameter name="MODULE_TYPE" value="ALTECC_DECODER" />
+  <parameter name="DEVICE_FAMILY" value="Agilex" />
+  <parameter name="GUI_USE_SYN_E" value="true" />
+  <parameter name="CBX_AUTO_BLACKBOX" value="ALL" />
+  <parameter name="GUI_USE_CLKEN" value="false" />
+  <parameter name="WIDTH_CODEWORD" value="72" />
+  <parameter name="GUI_USE_ACLR" value="false" />
+  <generatedFiles>
+   <file
+       path="/tmp/alt9529_8442435674046616027.dir/0001_intel_rtile_cxl_top_0_gen/hardware_test_design/common/altecc_dec_latency1/altecc_1910/synth/altecc_dec_latency1_altecc_1910_lizxuqi.v"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/tmp/alt9529_8442435674046616027.dir/0001_intel_rtile_cxl_top_0_gen/hardware_test_design/common/altecc_dec_latency1/altecc_1910/synth/altecc_dec_latency1_altecc_1910_lizxuqi.v"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/data/intelFPGA_pro/22.3/ip/altera/megafunctions/altecc/altecc_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="altecc_dec_latency1" as="altecc_0" />
+  <messages>
+   <message level="Info" culprit="altecc_dec_latency1">"Generating: altecc_dec_latency1_altecc_1910_lizxuqi"</message>
+   <message level="Info" culprit="altecc_0">Generating top-level entity altecc_dec_latency1_altecc_1910_lizxuqi.</message>
+   <message level="Info" culprit="altecc_0">command = exec /data/intelFPGA_pro/22.3/quartus/linux64/clearbox ALTECC_DECODER -f /tmp/alt9529_3003518403815586777.dir/0003_altecc_0_gen/parameter_list CBX_FILE=\"altecc_dec_latency1_altecc_1910_lizxuqi.v\" CBX_OUTPUT_DIRECTORY=\"/tmp/alt9529_3003518403815586777.dir/0003_altecc_0_gen\"</message>
+   <message level="Info" culprit="altecc_0">error = Output file name /tmp/alt9529_3003518403815586777.dir/0003_altecc_0_gen/altecc_dec_latency1_altecc_1910_lizxuqi.v</message>
+  </messages>
+ </entity>
+</deploy>

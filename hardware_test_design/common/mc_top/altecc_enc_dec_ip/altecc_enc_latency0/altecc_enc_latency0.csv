@@ -1,0 +1,18 @@
+# system info altecc_enc_latency0 on 2023.06.21.20:56:30
+system_info:
+name,value
+DEVICE,AGIB027R29A1E2VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for altecc_enc_latency0 on 2023.06.21.20:56:30
+files:
+filepath,kind,attributes,module,is_top
+sim/altecc_enc_latency0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,altecc_enc_latency0,true
+altecc_1910/sim/altecc_enc_latency0_altecc_1910_azqkyey.v,VERILOG,,altecc_enc_latency0_altecc_1910_azqkyey,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+altecc_enc_latency0.altecc_0,altecc_enc_latency0_altecc_1910_azqkyey

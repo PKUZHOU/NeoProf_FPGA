@@ -1,0 +1,15 @@
+
+WORK > DEFAULT
+DEFAULT:             ./libraries/work/               
+work:                ./libraries/work/               
+altecc_1910:         ./libraries/altecc_1910/        
+altecc_dec_latency1: ./libraries/altecc_dec_latency1/
+altera_ver:          ./libraries/altera_ver/         
+lpm_ver:             ./libraries/lpm_ver/            
+sgate_ver:           ./libraries/sgate_ver/          
+altera_mf_ver:       ./libraries/altera_mf_ver/      
+altera_lnsim_ver:    ./libraries/altera_lnsim_ver/   
+tennm_ver:           ./libraries/tennm_ver/          
+tennm_hssi_ver:      ./libraries/tennm_hssi_ver/     
+tennm_hssi_f0_ver:   ./libraries/tennm_hssi_f0_ver/  
+tennm_hssi_r0_ver:   ./libraries/tennm_hssi_r0_ver/  

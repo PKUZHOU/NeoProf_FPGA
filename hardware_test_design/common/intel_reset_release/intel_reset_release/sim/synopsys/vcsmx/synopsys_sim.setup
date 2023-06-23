@@ -1,0 +1,15 @@
+
+WORK > DEFAULT
+DEFAULT:                          ./libraries/work/                            
+work:                             ./libraries/work/                            
+altera_s10_user_rst_clkgate_1941: ./libraries/altera_s10_user_rst_clkgate_1941/
+intel_reset_release:              ./libraries/intel_reset_release/             
+altera_ver:                       ./libraries/altera_ver/                      
+lpm_ver:                          ./libraries/lpm_ver/                         
+sgate_ver:                        ./libraries/sgate_ver/                       
+altera_mf_ver:                    ./libraries/altera_mf_ver/                   
+altera_lnsim_ver:                 ./libraries/altera_lnsim_ver/                
+tennm_ver:                        ./libraries/tennm_ver/                       
+tennm_hssi_ver:                   ./libraries/tennm_hssi_ver/                  
+tennm_hssi_f0_ver:                ./libraries/tennm_hssi_f0_ver/               
+tennm_hssi_r1_ver:                ./libraries/tennm_hssi_r1_ver/               
