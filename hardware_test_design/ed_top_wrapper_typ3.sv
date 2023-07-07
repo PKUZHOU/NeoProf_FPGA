@@ -868,18 +868,18 @@ intel_cxl_pio_ed_top intel_cxl_pio_ed_top_inst (
   // PF1 BAR2 example CSR                                --
   //-------------------------------------------------------
 
- ex_default_csr_top ex_default_csr_top_inst(
-    .csr_avmm_clk                        ( ip2csr_avmm_clk                   ),
-    .csr_avmm_rstn                       ( ip2csr_avmm_rstn                  ),
-    .csr_avmm_waitrequest                ( csr2ip_avmm_waitrequest           ),
-    .csr_avmm_readdata                   ( csr2ip_avmm_readdata              ),
-    .csr_avmm_readdatavalid              ( csr2ip_avmm_readdatavalid         ),
-    .csr_avmm_writedata                  ( ip2csr_avmm_writedata             ),
-    .csr_avmm_address                    ( ip2csr_avmm_address               ),
-    .csr_avmm_write                      ( ip2csr_avmm_write                 ),
-    .csr_avmm_read                       ( ip2csr_avmm_read                  ),
-    .csr_avmm_byteenable                 ( ip2csr_avmm_byteenable            )
- );
+//  ex_default_csr_top ex_default_csr_top_inst(
+//     .csr_avmm_clk                        ( ip2csr_avmm_clk                   ),
+//     .csr_avmm_rstn                       ( ip2csr_avmm_rstn                  ),
+//     .csr_avmm_waitrequest                ( csr2ip_avmm_waitrequest           ),
+//     .csr_avmm_readdata                   ( csr2ip_avmm_readdata              ),
+//     .csr_avmm_readdatavalid              ( csr2ip_avmm_readdatavalid         ),
+//     .csr_avmm_writedata                  ( ip2csr_avmm_writedata             ),
+//     .csr_avmm_address                    ( ip2csr_avmm_address               ),
+//     .csr_avmm_write                      ( ip2csr_avmm_write                 ),
+//     .csr_avmm_read                       ( ip2csr_avmm_read                  ),
+//     .csr_avmm_byteenable                 ( ip2csr_avmm_byteenable            )
+//  );
 
 
 //HDM SIZE
@@ -1091,16 +1091,16 @@ intel_cxl_pio_ed_top intel_cxl_pio_ed_top_inst (
 
 
  afu_top afu_top_inst(
-   // .csr_avmm_clk                        ( ip2csr_avmm_clk                    ),
-   // .csr_avmm_rstn                       ( ip2csr_avmm_rstn                   ),
-   // .csr_avmm_waitrequest                ( csr2ip_avmm_waitrequest            ),
-   // .csr_avmm_readdata                   ( csr2ip_avmm_readdata               ),
-   // .csr_avmm_readdatavalid              ( csr2ip_avmm_readdatavalid          ),
-   // .csr_avmm_writedata                  ( ip2csr_avmm_writedata              ),
-   // .csr_avmm_address                    ( ip2csr_avmm_address                ),
-   // .csr_avmm_write                      ( ip2csr_avmm_write                  ),
-   // .csr_avmm_read                       ( ip2csr_avmm_read                   ),
-   // .csr_avmm_byteenable                 ( ip2csr_avmm_byteenable             ),
+    .csr_avmm_clk                        ( ip2csr_avmm_clk                    ),
+    .csr_avmm_rstn                       ( ip2csr_avmm_rstn                   ),
+    .csr_avmm_waitrequest                ( csr2ip_avmm_waitrequest            ),
+    .csr_avmm_readdata                   ( csr2ip_avmm_readdata               ),
+    .csr_avmm_readdatavalid              ( csr2ip_avmm_readdatavalid          ),
+    .csr_avmm_writedata                  ( ip2csr_avmm_writedata              ),
+    .csr_avmm_address                    ( ip2csr_avmm_address                ),
+    .csr_avmm_write                      ( ip2csr_avmm_write                  ),
+    .csr_avmm_read                       ( ip2csr_avmm_read                   ),
+    .csr_avmm_byteenable                 ( ip2csr_avmm_byteenable             ),
     .afu_clk                             ( ip2hdm_clk                         ),
     .afu_rstn                            ( ip2hdm_reset_n                      ),
     .mc2iafu_ready_eclk                  ( mc2iafu_ready_eclk                  ),

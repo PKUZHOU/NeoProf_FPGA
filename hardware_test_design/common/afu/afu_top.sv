@@ -30,16 +30,16 @@
 import cxlip_top_pkg::*;
 
 module afu_top(
-    //input  logic        csr_avmm_clk,
-    //input  logic        csr_avmm_rstn,  
-    //output logic        csr_avmm_waitrequest,            
-    //output logic [31:0] csr_avmm_readdata,               
-    //output logic        csr_avmm_readdatavalid,          
-    //input  logic [31:0] csr_avmm_writedata,              
-    //input  logic [21:0] csr_avmm_address,                
-    //input  logic        csr_avmm_write,                  
-    //input  logic        csr_avmm_read,                   
-    //input  logic [3:0]  csr_avmm_byteenable,
+    input  logic        csr_avmm_clk,
+    input  logic        csr_avmm_rstn,  
+    output logic        csr_avmm_waitrequest,            
+    output logic [31:0] csr_avmm_readdata,               
+    output logic        csr_avmm_readdatavalid,          
+    input  logic [31:0] csr_avmm_writedata,              
+    input  logic [21:0] csr_avmm_address,                
+    input  logic        csr_avmm_write,                  
+    input  logic        csr_avmm_read,                   
+    input  logic [3:0]  csr_avmm_byteenable,
     
     input  logic                                             afu_clk,
     input  logic                                             afu_rstn,
@@ -96,24 +96,75 @@ module afu_top(
     
 );
 
+logic [31:0] old_pg_addr [1:0]; // ensure that each address enqueues only once
+logic [31:0] cdc_fifo_wr_data;
+logic [31:0] pg_addr[1:0];
 
-//CSR block
-/*
-   afu_csr_avmm_slave afu_csr_avmm_slave_inst(
-       .clk          (csr_avmm_clk),
-       .reset_n      (csr_avmm_rstn),
-       .writedata    (csr_avmm_writedata),
-       .read         (csr_avmm_read),
-       .write        (csr_avmm_write),
-       .byteenable   (csr_avmm_byteenable),
-       .readdata     (csr_avmm_readdata),
-       .readdatavalid(csr_avmm_readdatavalid),
-       .address      (csr_avmm_address),
-       .waitrequest  (csr_avmm_waitrequest)
-   );
-*/
+assign pg_addr[0] = (cxlip2iafu_address_eclk[0] >> 5); //  cxlip2iafu_address_eclk : [51:7]
+assign pg_addr[1] = (cxlip2iafu_address_eclk[1] >> 5);
 
-//Passthrough User can implement the AFU logic here 
+logic cdc_fifo_wr_en;
+
+always@(posedge afu_clk) begin
+    if (cxlip2iafu_read_eclk[0] && (old_pg_addr[0] != pg_addr[0])) 
+    begin
+        cdc_fifo_wr_en <= 1'b1;
+        old_pg_addr[0] <= pg_addr[0];
+        cdc_fifo_wr_data <= pg_addr[0]; // get the page address
+    end 
+    else if (cxlip2iafu_read_eclk[1] && (old_pg_addr[1] != pg_addr[1])) // another channel
+    begin
+        cdc_fifo_wr_en <= 1'b1;
+        old_pg_addr[1] <= pg_addr[1];
+        cdc_fifo_wr_data <= pg_addr[1]; // get the page address
+    end
+    else
+    begin
+        cdc_fifo_wr_en <= 1'b0;
+        cdc_fifo_wr_data <= 0;
+    end 
+end
+
+// Read/write state sample 
+
+logic ddr_read_valid;
+logic ddr_write_valid;
+
+assign ddr_read_valid = iafu2cxlip_readdatavalid_eclk[0] || iafu2cxlip_readdatavalid_eclk[1];
+assign ddr_write_valid = cxlip2iafu_write_eclk[0] || cxlip2iafu_write_eclk[1];
+
+neoprof_avmm_slave #(
+    .ARRAY_DEPTH (2),
+    .KEY_WIDTH (32),
+    .HASH_WIDTH(19), // 2 ** 19 = 512K entries 
+    .CNT_WIDTH (16),   // counter width
+    .CNT_PIPELINE_DEPTH(128),
+    .HB_PIPELINE_DEPTH(128),
+    .HOT_FIFO_DEPTH(1<<14) // 16K
+) neoprof_avmm_slave_inst(
+    .clk          (csr_avmm_clk),
+    .reset_n      (csr_avmm_rstn),
+    .writedata    (csr_avmm_writedata),
+    .read         (csr_avmm_read),
+    .write        (csr_avmm_write),
+    .byteenable   (csr_avmm_byteenable),
+    .readdata     (csr_avmm_readdata),
+    .readdatavalid(csr_avmm_readdatavalid),
+    .address      (csr_avmm_address),
+    .waitrequest  (csr_avmm_waitrequest),
+
+    // connect to cdc_fifo
+    .afu_clk (afu_clk),
+    .afu_rstn (afu_rstn),
+    .cdc_fifo_push_en (cdc_fifo_wr_en),
+    .cdc_fifo_push_data (cdc_fifo_wr_data),
+
+    // state monitor
+    .ddr_rd_valid (ddr_read_valid),
+    .ddr_wr_valid (ddr_write_valid)
+);
+
+
 
 assign iafu2cxlip_ready_eclk                = mc2iafu_ready_eclk             ;
 assign iafu2cxlip_read_poison_eclk          = mc2iafu_read_poison_eclk       ;
@@ -137,8 +188,6 @@ assign iafu2mc_write_ras_sbe_eclk           = cxlip2iafu_write_ras_sbe_eclk ;
 assign iafu2mc_write_ras_dbe_eclk           = cxlip2iafu_write_ras_dbe_eclk ;
 assign iafu2mc_address_eclk                 = cxlip2iafu_address_eclk       ;
 assign iafu2mc_req_mdata_eclk               = cxlip2iafu_req_mdata_eclk     ;
-
-
 
 
 endmodule
